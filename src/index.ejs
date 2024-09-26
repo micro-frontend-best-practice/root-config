@@ -50,8 +50,7 @@
       {
         "imports": {
           "@Amin/root-config": "//localhost:9000/Amin-root-config.js",
-          "@Amin/app1": "//localhost:8080/Amin-app1.js",
-          "@Amin/api": "//localhost:8081/Amin-api.js"
+          "@Amin/app1": "//localhost:8080/Amin-app1.js"
         }
       }
     </script>
@@ -73,9 +72,13 @@
     <!-- <script src="https://cdn.jsdelivr.net/npm/zone.js@0.11.3/dist/zone.min.js"></script> -->
 
     <script src="https://cdn.jsdelivr.net/npm/import-map-overrides@2.2.0/dist/import-map-overrides.js"></script>
-
+    <% if (isLocal) { %>
     <script src="https://cdn.jsdelivr.net/npm/systemjs@6.8.3/dist/system.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/systemjs@6.8.3/dist/extras/amd.js"></script>
+    <% } else { %>
+    <script src="https://cdn.jsdelivr.net/npm/systemjs@6.8.3/dist/system.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/systemjs@6.8.3/dist/extras/amd.min.js"></script>
+    <% } %>
   </head>
   <body>
     <noscript> You need to enable JavaScript to run this app. </noscript>
